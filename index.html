@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mess Management Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <style>
+      /* General Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+
+      body {
+        display: flex;
+        background: #ecf0f3;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      /* Sidebar Styling */
+      .sidebar {
+        width: 260px;
+        background: #2c3e50;
+        color: white;
+        transition: all 0.3s ease;
+        position: fixed;
+        height: 100%;
+        padding-top: 20px;
+        box-shadow: 8px 0 15px rgba(0, 0, 0, 0.2);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+      }
+
+      .sidebar ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .sidebar ul li {
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-radius: 10px;
+        margin: 8px;
+      }
+
+      .sidebar ul li i {
+        margin-right: 15px;
+        font-size: 22px;
+      }
+
+      .sidebar ul li:hover,
+      .sidebar ul li.active {
+        background: #34495e;
+        box-shadow: inset 4px 4px 8px rgba(255, 255, 255, 0.2),
+          inset -4px -4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-left: 260px;
+        padding: 30px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      /* Navbar */
+      .navbar {
+        background: #2980b9;
+        color: white;
+        padding: 15px 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        width: calc(100% - 260px);
+        top: 0;
+        left: 260px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .menu-icon {
+        cursor: pointer;
+        font-size: 26px;
+      }
+
+      /* Cards Styling */
+      .card {
+        background: #ecf0f3;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.1),
+          -8px -8px 15px rgba(255, 255, 255, 0.8);
+        text-align: center;
+        transition: 0.3s;
+        margin-bottom: 20px;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+      }
+
+      .card i {
+        font-size: 40px;
+        color: #2980b9;
+        margin-bottom: 10px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .sidebar {
+          left: -260px;
+          position: fixed;
+        }
+
+        .sidebar.active {
+          left: 0;
+        }
+
+        .navbar {
+          width: 100%;
+          left: 0;
+        }
+
+        .main-content {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <h2>Mess Dashboard</h2>
+      <i class="material-icons menu-icon" onclick="toggleMenu()">menu</i>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+      <ul>
+        <li onclick="showSection('dashboard')" class="active">
+          <i class="material-icons">dashboard</i> Dashboard
+        </li>
+        <li onclick="showSection('mealBooking')">
+          <i class="material-icons">restaurant_menu</i> Meal Booking
+        </li>
+        <li onclick="showSection('attendance')">
+          <i class="material-icons">check_circle</i> Attendance
+        </li>
+        <li onclick="showSection('payments')">
+          <i class="material-icons">payment</i> Payments
+        </li>
+        <li onclick="showSection('foodPreferences')">
+          <i class="material-icons">settings</i> Food Preferences
+        </li>
+        <li onclick="showSection('feedback')">
+          <i class="material-icons">feedback</i> Feedback
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content" id="mainContent">
+      <div class="card">
+        <h3>Welcome to the Mess Management Dashboard</h3>
+        <p>Select an option from the sidebar to view details.</p>
+      </div>
+    </main>
+
+    <script>
+      // Sidebar Toggle Function
+      function toggleMenu() {
+        document.getElementById("sidebar").classList.toggle("active");
+      }
+
+      // Section Change Function
+      function showSection(section) {
+        const content = {
+          dashboard: `<div class="card"><h3>Dashboard</h3><p>Overview of your mess activities.</p></div>`,
+          mealBooking: `<div class="card"><h3>Meal Booking</h3><p>View and book your meals.</p></div>`,
+          attendance: `<div class="card"><h3>Attendance</h3><p>Track your meal attendance.</p></div>`,
+          payments: `<div class="card"><h3>Payments</h3><p>Manage your bills & transactions.</p></div>`,
+          foodPreferences: `<div class="card"><h3>Food Preferences</h3><p>Update your meal choices.</p></div>`,
+          feedback: `<div class="card"><h3>Feedback</h3><p>Submit reviews & complaints.</p></div>`,
+        };
+
+        document.getElementById("mainContent").innerHTML = content[section];
+
+        // Remove active class from all sidebar items and add it to the selected one
+        const items = document.querySelectorAll(".sidebar ul li");
+        items.forEach((item) => item.classList.remove("active"));
+
+        event.target.classList.add("active");
+      }
+    </script>
+  </body>
+</html>

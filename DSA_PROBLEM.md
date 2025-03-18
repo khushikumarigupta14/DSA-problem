@@ -10,7 +10,16 @@
 8️⃣ Find the Missing Number in an Array (1 to N)
 9️⃣ Find the Intersection and Union of Two Arrays
 🔟 Find Pairs That Sum to a Target Value
-
+1️⃣1️⃣ Find the Largest Subarray with Zero Sum
+1️⃣2️⃣ Move All Zeros to the End of the Array Without Changing Order
+1️⃣3️⃣ Find the First Repeating and First Non-Repeating Element
+1️⃣4️⃣ Find the Longest Consecutive Sequence in an Array
+1️⃣5️⃣ Find Common Elements in Three Sorted Arrays
+1️⃣6️⃣ Check if Two Arrays Are Equal (Ignoring Order)
+1️⃣7️⃣ Merge Two Sorted Arrays Without Extra Space
+1️⃣8️⃣ Find the Union of Multiple Arrays
+1️⃣9️⃣ Find Subarrays with a Given Sum
+2️⃣0️⃣ Rotate an Array by K Positions (Left or Right)
 🔹 Intermediate Level
 1️⃣1️⃣ Find the First and Last Occurrence of a Number in a Sorted Array
 1️⃣2️⃣ Move All Zeroes to the End of an Array Without Changing Order

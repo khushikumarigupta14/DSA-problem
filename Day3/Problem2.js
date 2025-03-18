@@ -35,3 +35,7 @@ const frequency = arr.reduce((acc, item) => {
 }, {});
 
 console.log(frequency);
+
+// remove duplicate elemtne
+//  1. array --> set
+// 2. set --> array

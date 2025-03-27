@@ -1,3 +1,6 @@
+// What is Encapsulation?
+// Encapsulation simply means hiding details and only showing what is necessary.
+
 // college--> streams(rules, subjects, and students,)
 //               |
 //               |
@@ -14,29 +17,31 @@
 
 class College {
     constructor(name) {
-        this.name = name; // Public property
-        this.streams = {}; // Private data (not directly accessible)
-    }
+        this.name = name;  // Public (Can be accessed directly)
+        let streams = {};  // Private (Hidden inside the class)
 
-    // Method to add a new stream
-    addStream(streamName, subjects) {
-        this.streams[streamName] = subjects;
-    }
+        // Method to add a stream (like college administration adding a stream)
+        this.addStream = function(streamName, subjects) {
+            streams[streamName] = subjects;
+        };
 
-    // Method to get subjects of a particular stream (controlled access)
-    getStreamSubjects(streamName) {
-        return this.streams[streamName] || "Stream not found";
+        // Method to get subjects (like a student asking the office about subjects)
+        this.getStreamSubjects = function(streamName) {
+            return streams[streamName] || "Stream not found";
+        };
     }
 }
 
-// Creating a College Object
-const myCollege = new College("ABC University");
+// Creating a college object
+const myCollege = new College("ABC College");
 
-// Adding Streams with subjects (Encapsulation)
+// Adding streams
 myCollege.addStream("Science", ["Physics", "Chemistry", "Biology"]);
-myCollege.addStream("Commerce", ["Accounting", "Business Studies", "Economics"]);
-myCollege.addStream("Arts", ["History", "Psychology", "Sociology"]);
+myCollege.addStream("Commerce", ["Accounting", "Business Studies"]);
 
-// Trying to access data (Encapsulated)
-console.log(myCollege.getStreamSubjects("Science")); // ✅ Allowed
-console.log(myCollege.streams); // ❌ Should not be directly accessible
+// Getting subjects of a stream
+console.log(myCollege.getStreamSubjects("Science")); // Output: ["Physics", "Chemistry", "Biology"]
+console.log(myCollege.getStreamSubjects("Arts"));    // Output: "Stream not found"
+
+// Trying to access private data directly (Not allowed)
+console.log(myCollege.streams);  // ❌ Undefined (Because it's private)

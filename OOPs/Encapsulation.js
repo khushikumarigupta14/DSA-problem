@@ -16,20 +16,20 @@
 // The College Administration allows only limited access to this data using defined methods (functions).
 
 class College {
-    constructor(name) {
-        this.name = name;  // Public (Can be accessed directly)
-        let streams = {};  // Private (Hidden inside the class)
+  constructor(name) {
+    this.name = name; // Public (Can be accessed directly)
+    let streams = {}; // Private (Hidden inside the class)
 
-        // Method to add a stream (like college administration adding a stream)
-        this.addStream = function(streamName, subjects) {
-            streams[streamName] = subjects;
-        };
+    // Method to add a stream (like college administration adding a stream)
+    this.addStream = function (streamName, subjects) {
+      streams[streamName] = subjects;
+    };
 
-        // Method to get subjects (like a student asking the office about subjects)
-        this.getStreamSubjects = function(streamName) {
-            return streams[streamName] || "Stream not found";
-        };
-    }
+    // Method to get subjects (like a student asking the office about subjects)
+    this.getStreamSubjects = function (streamName) {
+      return streams[streamName] || "Stream not found";
+    };
+  }
 }
 
 // Creating a college object
@@ -41,7 +41,8 @@ myCollege.addStream("Commerce", ["Accounting", "Business Studies"]);
 
 // Getting subjects of a stream
 console.log(myCollege.getStreamSubjects("Science")); // Output: ["Physics", "Chemistry", "Biology"]
-console.log(myCollege.getStreamSubjects("Arts"));    // Output: "Stream not found"
+console.log(myCollege.getStreamSubjects("Arts")); // Output: "Stream not found"
 
 // Trying to access private data directly (Not allowed)
-console.log(myCollege.streams);  // ❌ Undefined (Because it's private)
+console.log(myCollege.streams); // ❌ Undefined (Because it's private)
+// console.log(myCollege.streams["Science"]); // ❌ Undefined (Because it's private)

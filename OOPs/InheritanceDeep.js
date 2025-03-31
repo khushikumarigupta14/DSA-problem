@@ -8,6 +8,9 @@ class Parent {
   show() {
     console.log(this.name, this.age); //print name and age
   }
+  #notShow() {
+    console.log("not show");
+  }
 }
 class Parent1 {
   constructor(name, age) {
@@ -19,9 +22,6 @@ class Parent1 {
   }
   OverRide() {
     console.log("OverRide method");
-  }
-  #notShow() {
-    console.log("not show");
   }
 }
 const parent = new Parent("John", 10);
@@ -44,6 +44,8 @@ child.display();
 child.OverRide(); // OverRide method in child class
 // child.notShow(); // not show
 parent.show(); // John 10
+// parent.notShow()
+// console.log(parent.notShow())
 // Output: John 10
 //         John 10 ABC School
 function User(name, email) {
@@ -57,3 +59,10 @@ function User1(name, email) {
   name = "John";
   age = 25;
 }
+
+// ^ conclusion
+// 1. Inheritance allows a class to inherit properties and methods from another class, promoting code reuse and organization.
+// private  data not accessible outside the class
+// 2. The constructor method is a special method for creating and initializing an object created with a class.
+// 3. The super() function is used to call the constructor of the parent class, allowing the child class to inherit properties from the parent.
+// 4. The prototype property allows you to add methods and properties to an object after it has been created, enabling dynamic behavior.

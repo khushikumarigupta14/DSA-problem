@@ -1,4 +1,4 @@
-// call
+// call bind and apply
 const person = {
   name: "khushu",
   age: 2,

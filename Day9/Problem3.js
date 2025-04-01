@@ -10,9 +10,9 @@
 // Node.js Debugger (CLI-based debugging)
 // VS Code Debugger (Best for Node.js & frontend)
 
-📌 What is the debugger Statement?
-The debugger; statement pauses JavaScript execution at that point.
+// 📌 What is the debugger Statement?
+// The debugger; statement pauses JavaScript execution at that point.
 
-Works in both browser (Chrome DevTools) and Node.js (VS Code Debugger).
+// Works in both browser (Chrome DevTools) and Node.js (VS Code Debugger).
 
 // It helps inspect variables, call stack, and execution flow.

@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "name": "Wireless Bluetooth Headphones",
+      "description": "Noise-canceling over-ear headphones with 40 hours of battery life.",
+      "price": 79.99,
+      "currency": "USD",
+      "category": "Electronics",
+      "brand": "Sony",
+      "stock": 50,
+      "sku": "WH-1000XM4",
+      "images": [
+        "https://example.com/images/headphones1.jpg",
+        "https://example.com/images/headphones2.jpg"
+      ],
+      "seller": {
+        "id": "seller_123",
+        "name": "TechZone"
+      },
+      "variants": [
+        {
+          "color": "Black",
+          "stock": 20,
+          "sku": "WH-1000XM4-BLK"
+        },
+        {
+          "color": "Silver",
+          "stock": 30,
+          "sku": "WH-1000XM4-SLV"
+        }
+      ],
+      "ratings": {
+        "average": 4.7,
+        "total_reviews": 230
+      }
+    },
+    {
+      "name": "Smartwatch Series 7",
+      "description": "Advanced smartwatch with fitness tracking and ECG monitoring.",
+      "price": 299.99,
+      "currency": "USD",
+      "category": "Wearables",
+      "brand": "Apple",
+      "stock": 100,
+      "sku": "APPLE-WATCH-7",
+      "images": [
+        "https://example.com/images/smartwatch1.jpg",
+        "https://example.com/images/smartwatch2.jpg"
+      ],
+      "seller": {
+        "id": "seller_456",
+        "name": "GadgetWorld"
+      },
+      "variants": [
+        {
+          "color": "Red",
+          "stock": 40,
+          "sku": "APPLE-WATCH-7-RED"
+        },
+        {
+          "color": "Blue",
+          "stock": 60,
+          "sku": "APPLE-WATCH-7-BLUE"
+        }
+      ],
+      "ratings": {
+        "average": 4.8,
+        "total_reviews": 500
+      }
+    },
+    {
+      "name": "Gaming Laptop",
+      "description": "High-performance gaming laptop with RTX 3080 and 16GB RAM.",
+      "price": 1499.99,
+      "currency": "USD",
+      "category": "Computers",
+      "brand": "ASUS",
+      "stock": 30,
+      "sku": "ASUS-ROG-STRIX",
+      "images": [
+        "https://example.com/images/laptop1.jpg",
+        "https://example.com/images/laptop2.jpg"
+      ],
+      "seller": {
+        "id": "seller_789",
+        "name": "EliteComputers"
+      },
+      "variants": [
+        {
+          "ram": "16GB",
+          "storage": "1TB SSD",
+          "stock": 15,
+          "sku": "ASUS-ROG-16GB-1TB"
+        },
+        {
+          "ram": "32GB",
+          "storage": "2TB SSD",
+          "stock": 15,
+          "sku": "ASUS-ROG-32GB-2TB"
+        }
+      ],
+      "ratings": {
+        "average": 4.9,
+        "total_reviews": 120
+      }
+    }
+  ]
+}
